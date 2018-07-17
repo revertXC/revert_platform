@@ -1,0 +1,6 @@
+1、a_common
+    --公共配置
+2、a_modue
+    --插件jar引入
+3、b_core
+    --核心
