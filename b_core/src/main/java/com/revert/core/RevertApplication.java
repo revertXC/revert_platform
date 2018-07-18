@@ -16,8 +16,8 @@ public class RevertApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(RevertApplication.class,args);
-        logger.info("启动成！！！");
-        logger.error("启动成！！！");
+//        logger.info("启动成！！！");
+//        logger.error("启动成！！！");
     }
 
     //war包需实现方法
