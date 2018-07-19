@@ -1,6 +1,6 @@
-package com.revert.core.admin.demo.queryDB.jdbcTemplate.controller;
+package com.revert.core.demo.queryDB.jdbcTemplate.controller;
 
-import com.revert.core.admin.demo.queryDB.jdbcTemplate.service.DemoUserService;
+import com.revert.core.demo.queryDB.jdbcTemplate.service.DemoUserService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

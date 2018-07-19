@@ -1,4 +1,4 @@
-package com.revert.core.admin.demo.queryDB.jdbcTemplate.mapper;
+package com.revert.core.demo.queryDB.jdbcTemplate.mapper;
 
 import com.revert.modue.shiro.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;

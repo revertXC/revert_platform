@@ -1,7 +1,7 @@
 package junit;
 
 import com.revert.core.RevertApplication;
-import com.revert.core.admin.demo.queryDB.jdbcTemplate.service.DemoUserService;
+import com.revert.core.demo.queryDB.jdbcTemplate.service.DemoUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
