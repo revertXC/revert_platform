@@ -1,4 +1,4 @@
-package com.revert.modue.shiro.model;
+package com.revert.modue.shiro.user.model;
 
 import com.revert.platform.common.base.model.BaseModel;
 import lombok.Data;

@@ -6,9 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 主mybatsi 数据
+ * 是否逻辑删除数据
  */
-@Retention(RetentionPolicy.RUNTIME) /*注解保留时间*/
-@Target(ElementType.TYPE) /*注解作用目标*/
-public @interface MasterMybatisDao {
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LogicDelete {
+    boolean value() default true;
 }

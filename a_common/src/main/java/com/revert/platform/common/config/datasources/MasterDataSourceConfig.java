@@ -22,7 +22,7 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@MapperScan(basePackages = "com.revert", sqlSessionFactoryRef = "masterDataSource", annotationClass = MasterMybatisDao.class)
+@MapperScan(basePackages = "com.revert.**.**.mapper", sqlSessionFactoryRef = "masterDataSource", annotationClass = MasterMybatisDao.class)
 public class MasterDataSourceConfig {
 
     @Value("${platform.dataSource.type}")
@@ -64,7 +64,7 @@ public class MasterDataSourceConfig {
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(masterDataSource());
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath*:com/revert/"+datasourceType+"/mapper/impI/**/*Mapper.xml"));
+        sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath*:com/revert/"+datasourceType+"/mapper/**/impI/**/*Mapper.xml"));
         sqlSessionFactoryBean.setPlugins(new Interceptor[]{pagePlugin()});
 
         return sqlSessionFactoryBean.getObject();

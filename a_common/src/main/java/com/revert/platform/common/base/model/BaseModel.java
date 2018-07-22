@@ -37,4 +37,12 @@ public class BaseModel implements Serializable {
     /**标记是否删除 0否 1是*/
     private Integer deleted;
 
+    /**当前页*/
+    private int pageNum = 1;
+
+    /**每页条数*/
+    private int pageSize = 15;
+
+    private String OrderBy;
+
 }

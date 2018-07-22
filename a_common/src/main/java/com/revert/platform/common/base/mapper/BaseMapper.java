@@ -35,11 +35,6 @@ public interface BaseMapper<T extends BaseModel> {
      */
 //    T selectByModelUUid(@Param("uuid") String uuid);
 
-    /**
-     * 查询总数
-     * @return
-     */
-    int selectAllCount();
 
     /**
      * 根据条件查询总数
@@ -104,4 +99,6 @@ public interface BaseMapper<T extends BaseModel> {
      * @return
      */
     int updateByModel(@Param("newObj") T newObj,@Param("whereObj") T whereObj);
+
+    int updateAllByModel(T t);
 }
