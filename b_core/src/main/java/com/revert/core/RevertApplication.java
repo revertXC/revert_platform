@@ -8,16 +8,12 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootApplication(scanBasePackages = {"com"})
+@SpringBootApplication(scanBasePackages = {"com.revert"})
 @EnableScheduling
 public class RevertApplication extends SpringBootServletInitializer {
 
-    private static Logger logger = LoggerFactory.getLogger(RevertApplication.class);
-
     public static void main(String[] args) {
         SpringApplication.run(RevertApplication.class,args);
-//        logger.info("启动成！！！");
-//        logger.error("启动成！！！");
     }
 
     //war包需实现方法

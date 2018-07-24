@@ -13,17 +13,17 @@ import org.springframework.test.context.web.WebAppConfiguration;
  * junit 测试基类
  */
 //SpringJUnit支持，由此引入Spring-Test框架支持！
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 //启动类
-@SpringBootTest(classes = RevertApplication.class)
+//@SpringBootTest(classes = RevertApplication.class)
 //web项目支持
-@WebAppConfiguration
+//@WebAppConfiguration
 public class demoJunit {
 
-    @Autowired
+//    @Autowired
     private DemoUserService userService;
 
-    @Test
+//    @Test
     public void runJunitTest()
     {
         System.out.println(userService.selectAllCount());
