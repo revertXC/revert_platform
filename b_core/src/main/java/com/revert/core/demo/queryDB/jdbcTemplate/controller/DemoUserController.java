@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Log4j2
-@Controller
-@RequestMapping("demo/user")
+//@Log4j2
+//@Controller
+//@RequestMapping("demo/user")
 public class DemoUserController {
 
     @Autowired

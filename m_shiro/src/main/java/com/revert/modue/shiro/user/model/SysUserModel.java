@@ -1,10 +1,12 @@
 package com.revert.modue.shiro.user.model;
 
+import com.revert.platform.common.annotation.LogicDelete;
 import com.revert.platform.common.base.model.BaseModel;
 import lombok.Data;
 
 @Data
-public class UserModel extends BaseModel {
+@LogicDelete()
+public class SysUserModel extends BaseModel {
 
     /**名称*/
     private String name;

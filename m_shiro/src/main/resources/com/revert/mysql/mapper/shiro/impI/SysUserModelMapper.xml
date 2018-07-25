@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.revert.core.generator.user.mapper.UserModelMapper">
-  <resultMap id="BaseResultMap" type="com.revert.modue.shiro.user.model.UserModel">
+  <resultMap id="BaseResultMap" type="com.revert.modue.shiro.user.model.SysUserModel">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="account" jdbcType="VARCHAR" property="account" />
@@ -58,7 +58,7 @@
     </if>
   </sql>
 
-  <select id="selectByModel" parameterType="com.revert.modue.shiro.user.model.UserModel" resultMap="BaseResultMap">
+  <select id="selectByModel" parameterType="com.revert.modue.shiro.user.model.SysUserModel" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List_Alis" />
     from sys_user u
@@ -84,13 +84,13 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
 
-    <delete id="deleteByModel" parameterType="com.revert.modue.shiro.user.model.UserModel">
+    <delete id="deleteByModel" parameterType="com.revert.modue.shiro.user.model.SysUserModel">
         delete from sys_user u
         where 1=1
         <include refid="Base_Where_Alis"/>
     </delete>
 
-  <insert id="insertAll"  parameterType="com.revert.modue.shiro.user.model.UserModel" >
+  <insert id="insertAll"  parameterType="com.revert.modue.shiro.user.model.SysUserModel" >
     insert into sys_user (id, name, account, 
       password, remark, state, 
       deleted, create_by, create_date, 
@@ -100,7 +100,7 @@
       #{deleted,jdbcType=INTEGER}, #{createBy,jdbcType=BIGINT}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateBy,jdbcType=BIGINT}, #{updateDate,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertNotNull" parameterType="com.revert.modue.shiro.user.model.UserModel" >
+  <insert id="insertNotNull" parameterType="com.revert.modue.shiro.user.model.SysUserModel" >
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -173,7 +173,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateById" parameterType="com.revert.modue.shiro.user.model.UserModel">
+  <update id="updateById" parameterType="com.revert.modue.shiro.user.model.SysUserModel">
     update sys_user
     <set>
       <if test="name != null">
@@ -209,7 +209,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateAllByModel" parameterType="com.revert.modue.shiro.user.model.UserModel">
+  <update id="updateAllByModel" parameterType="com.revert.modue.shiro.user.model.SysUserModel">
     update sys_user
     set name = #{name,jdbcType=VARCHAR},
       account = #{account,jdbcType=VARCHAR},
@@ -227,7 +227,7 @@
         update sys_user set deleted = 1 where id = #{id,jdbcType=INTEGER}
     </update>
 
-    <update id="deleteLogicByModel" parameterType="com.revert.modue.shiro.user.model.UserModel">
+    <update id="deleteLogicByModel" parameterType="com.revert.modue.shiro.user.model.SysUserModel">
         update sys_user u set deleted = 1 where u.deleted = 0
         <include refid="Base_Where_Alis"/>
     </update>

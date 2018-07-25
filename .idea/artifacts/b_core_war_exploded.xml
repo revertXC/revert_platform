@@ -7,11 +7,11 @@
           <element id="module-output" name="b_core" />
         </element>
         <element id="directory" name="lib">
-          <element id="archive" name="a_common-1.0-SNAPSHOT.jar">
-            <element id="module-output" name="a_common" />
-          </element>
           <element id="archive" name="a_modue-1.0-SNAPSHOT.jar">
             <element id="module-output" name="a_modue" />
+          </element>
+          <element id="archive" name="a_common-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="a_common" />
           </element>
           <element id="archive" name="m_shiro-1.0-SNAPSHOT.jar">
             <element id="module-output" name="m_shiro" />

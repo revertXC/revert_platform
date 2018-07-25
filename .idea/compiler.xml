@@ -12,12 +12,12 @@
         <module name="m_shiro" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="a_common" target="1.7" />
-      <module name="a_modue" target="1.7" />
-      <module name="b_core" target="1.7" />
-      <module name="m_shiro" target="1.7" />
-      <module name="revert_platform" target="1.7" />
+    <bytecodeTargetLevel target="1.8">
+      <module name="a_common" target="1.8" />
+      <module name="a_modue" target="1.8" />
+      <module name="b_core" target="1.8" />
+      <module name="m_shiro" target="1.8" />
+      <module name="revert_platform" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

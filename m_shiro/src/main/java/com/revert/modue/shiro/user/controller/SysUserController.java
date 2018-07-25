@@ -1,7 +1,7 @@
 package com.revert.modue.shiro.user.controller;
 
-import com.revert.modue.shiro.user.model.UserModel;
-import com.revert.modue.shiro.user.service.UserService;
+import com.revert.modue.shiro.user.model.SysUserModel;
+import com.revert.modue.shiro.user.service.SysUserService;
 import com.revert.platform.common.annotation.LogicDelete;
 import com.revert.platform.common.base.model.BasePageInfo;
 import com.revert.platform.common.base.result.web.WebResult;
@@ -16,14 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/admin/api/v1/user")
 @Log4j2
-@LogicDelete
-public class UserController{
+@RestController
+@RequestMapping("/admin/api/v1/sysUser")
+public class SysUserController {
 
     @Autowired
-    private UserService userService;
+    private SysUserService userService;
 
     /**
      * 分页查询
@@ -31,7 +30,7 @@ public class UserController{
      * @return
      */
     @RequestMapping(method = {RequestMethod.GET})
-    public WebResult<BasePageInfo> selectByPage(UserModel userModel){
+    public WebResult<BasePageInfo> selectByPage(SysUserModel userModel){
         BasePageInfo basePageInfo = userService.selectByPage(userModel);
         return new WebResultBuild<BasePageInfo>().data(basePageInfo).build();
     }
@@ -41,10 +40,10 @@ public class UserController{
      * @param userModel
      * @return
      */
-    @RequestMapping(method = {RequestMethod.GET})
-    public WebResult<List<UserModel>> selectAll(UserModel userModel){
-        List<UserModel> listUser = userService.selectByModel(userModel);
-        return new WebResultBuild<List<UserModel>>().data(listUser).build();
+    @RequestMapping(value = "all",method = {RequestMethod.GET})
+    public WebResult<List<SysUserModel>> selectAll(SysUserModel userModel){
+        List<SysUserModel> listUser = userService.selectByModel(userModel);
+        return new WebResultBuild<List<SysUserModel>>().data(listUser).build();
     }
 
 
@@ -54,7 +53,7 @@ public class UserController{
      * @return
      */
     @RequestMapping(method = {RequestMethod.POST})
-    public WebResult<String> insert(UserModel userModel){
+    public WebResult<String> insert(SysUserModel userModel){
         try{
             userService.insertAll(userModel);
         }catch (Exception e){
@@ -69,7 +68,7 @@ public class UserController{
      * @return
      */
     @RequestMapping(method = {RequestMethod.PUT})
-    public WebResult<String> update(UserModel userModel){
+    public WebResult<String> update(SysUserModel userModel){
         try{
             userService.updateAllByModel(userModel);
         }catch (Exception e){

@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@Log4j2
 @RestController
 @RequestMapping("/platform/api/v1/sysTable")
-@Log4j2
-public class SystableController {
+public class SysTableController {
 
     @Autowired
     private SysTableService sysTableService;

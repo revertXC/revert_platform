@@ -1,6 +1,6 @@
 package com.revert.core.demo.queryDB.jdbcTemplate.mapper;
 
-import com.revert.modue.shiro.user.model.UserModel;
+import com.revert.modue.shiro.user.model.SysUserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -13,7 +13,7 @@ public class DemoUserDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public List<UserModel> selectAllByUser(UserModel userModel){
+    public List<SysUserModel> selectAllByUser(SysUserModel userModel){
         String sql = "select * from sys_user";
 //        jdbcTemplate.query()
         return null;
