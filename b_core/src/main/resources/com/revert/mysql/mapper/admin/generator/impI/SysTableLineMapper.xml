@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.revert.core.platform.generator.mapper.SysTableLineMapper">
+
+	<resultMap id="BaseResultMap" type="com.revert.core.platform.generator.model.SysTableLine">
+		<result column="column_name" jdbcType="VARCHAR" property="columnName" />
+		<result column="data_type" jdbcType="VARCHAR" property="jdbcDataType" />
+		<result column="column_comment" jdbcType="VARCHAR" property="comment" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		COLUMN_NAME, DATA_TYPE, COLUMN_COMMENT
+	</sql>
+	<sql id="Base_Where">
+		<if test='tableName != null'>
+			AND table_name = #{tableName}
+		</if>
+		<if test='columnName != null'>
+			AND column_name like  CONCAT('%',#{columnName},'%' )
+		</if>
+		<if test='jdbcDataType != null'>
+			AND data_type like  CONCAT('%',#{jdbcDataType},'%' )
+		</if>
+		<if test='comment != null'>
+			AND column_comment like  CONCAT('%',#{comment},'%' )
+		</if>
+	</sql>
+
+	<select id="selectByModel" parameterType="com.revert.core.platform.generator.model.SysTableLine" resultMap="BaseResultMap">
+		select <include refid="Base_Column_List" />
+			from information_schema.columns
+		where table_schema = (select database())
+		<include refid="Base_Where"/>
+		order by CREATE_TIME desc
+	</select>
+	
+</mapper>

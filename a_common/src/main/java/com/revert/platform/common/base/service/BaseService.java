@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 
 @Log4j2
-public class BaseService<T extends BaseModel,M extends BaseMapper<T>> implements BaseMapper<T> {
+public class BaseService<T extends BaseModel,M extends BaseMapper<T>>{
 
     @Autowired
     protected M mapper;
@@ -92,12 +92,10 @@ public class BaseService<T extends BaseModel,M extends BaseMapper<T>> implements
 
 
     /******************** 基础service 无逻辑*******************************************************************/
-    @Override
     public List<T> selectByModel(T t) {
         return this.mapper.selectByModel(t);
     }
 
-    @Override
     public T selectByModelId(Long id) {
         return this.mapper.selectByModelId(id);
     }
@@ -107,52 +105,42 @@ public class BaseService<T extends BaseModel,M extends BaseMapper<T>> implements
         return this.mapper.selectAllCountByModel(null);
     }
 
-    @Override
     public int selectAllCountByModel(T t) {
         return this.mapper.selectAllCountByModel(t);
     }
 
-    @Override
     public int insertAll(T t) {
         return this.mapper.insertAll(t);
     }
 
-    @Override
     public int insertNotNull(T t) {
         return this.mapper.insertNotNull(t);
     }
 
-    @Override
     public int deleteById(Long id) {
         return this.mapper.deleteById(id);
     }
 
-    @Override
     public int deleteByModel(T t) {
         return this.mapper.deleteByModel(t);
     }
 
-    @Override
     public int deleteLogicById(Long id) {
         return this.mapper.deleteLogicById(id);
     }
 
-    @Override
     public int deleteLogicByModel(T t) {
         return this.mapper.deleteLogicByModel(t);
     }
 
-    @Override
     public int updateById(T t) {
         return this.mapper.updateById(t);
     }
 
-    @Override
     public int updateByModel(T newObj, T whereObj) {
         return this.mapper.updateByModel(newObj, whereObj);
     }
 
-    @Override
     public int updateAllByModel(T t) {
         return this.mapper.updateAllByModel(t);
     }

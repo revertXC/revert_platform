@@ -15,6 +15,11 @@ public class WebResultBuild<T> implements Serializable {
         return this;
     }
 
+    public WebResultBuild<T> code(Integer code){
+        this.code = String.valueOf(code);
+        return this;
+    }
+
     public WebResultBuild<T> message(String message){
         this.message = message;
         return this;

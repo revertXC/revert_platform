@@ -7,6 +7,10 @@
           <element id="module-output" name="b_core" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:3.17" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.10" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.1" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-scratchpad:3.17" />
           <element id="archive" name="a_modue-1.0-SNAPSHOT.jar">
             <element id="module-output" name="a_modue" />
           </element>
@@ -87,6 +91,7 @@
           <element id="library" level="project" name="Maven: net.sourceforge.nekohtml:nekohtml:1.9.20" />
           <element id="library" level="project" name="Maven: xerces:xercesImpl:2.10.0" />
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.4.01" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
         </element>
       </element>
       <element id="directory" name="META-INF">

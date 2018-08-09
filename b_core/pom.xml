@@ -17,6 +17,19 @@
     <url>http://www.example.com</url>
 
     <dependencies>
+        <!-- excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.17</version>
+        </dependency>
+
+        <!-- word -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.17</version>
+        </dependency>
         <dependency>
             <groupId>revert</groupId>
             <artifactId>a_modue</artifactId>

@@ -8,11 +8,23 @@
 		<result column="table_rows" jdbcType="INTEGER" property="tableRow" />
 		<result column="table_type" jdbcType="VARCHAR" property="tableType" />
 		<result column="table_comment" jdbcType="VARCHAR" property="tableComment" />
+
+		<collection property="listTableLine" column="column_name" ofType="com.revert.core.platform.generator.model.SysTableLine">
+            <result column="column_name" jdbcType="VARCHAR" property="columnName" />
+            <result column="column_data_type" jdbcType="VARCHAR" property="jdbcDataType" />
+            <result column="column_comment" jdbcType="VARCHAR" property="comment" />
+        </collection>
 	</resultMap>
 	
 	<sql id="Base_Column_List">
 		TABLE_NAME, TABLE_ROWS, TABLE_TYPE, TABLE_COMMENT
 	</sql>
+    <sql id="Base_Column_List_Alis">
+        tab.TABLE_NAME, tab.TABLE_ROWS, tab.TABLE_TYPE, tab.TABLE_COMMENT
+    </sql>
+    <sql id="Base_Line_Column_List_Alis">
+        col.COLUMN_NAME, col.DATA_TYPE as column_data_type, col.COLUMN_COMMENT
+    </sql>
 	<sql id="Base_Where">
 		<if test='tableName != null'>
 			AND table_name like  CONCAT('%',#{tableName},'%' )
@@ -21,13 +33,22 @@
 			AND table_type like  CONCAT('%',#{tableType},'%' )
 		</if>
 	</sql>
-
+    <sql id="Base_Where_Alis">
+        <if test='tableName != null'>
+            AND tab.table_name like  CONCAT('%',#{tableName},'%' )
+        </if>
+        <if test='tableType != null'>
+            AND tab.table_type like  CONCAT('%',#{tableType},'%' )
+        </if>
+    </sql>
 	<select id="selectByModel" parameterType="com.revert.core.platform.generator.model.SysTable" resultMap="BaseResultMap">
-		select <include refid="Base_Column_List" />
-			from information_schema.tables
-		where table_schema = (select database())
-		<include refid="Base_Where"/>
-		order by CREATE_TIME desc
+		select <include refid="Base_Column_List_Alis" />,
+        <include refid="Base_Line_Column_List_Alis" />
+        from information_schema.tables tab
+        LEFT JOIN information_schema.columns col ON tab.TABLE_NAME = col.TABLE_NAME
+		where tab.table_schema = (select database())
+		<include refid="Base_Where_Alis"/>
+		order by tab.CREATE_TIME desc
 	</select>
 	
 </mapper>

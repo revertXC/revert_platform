@@ -1,5 +1,6 @@
-package ${package}.model;
+package ${packageName}.model;
 
+import com.revert.platform.common.annotation.LogicDelete;
 import com.revert.platform.common.base.model.BaseModel;
 import lombok.Data;
 
